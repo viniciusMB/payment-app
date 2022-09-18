@@ -1,0 +1,39 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/payment/src",
+  "monorepo": true,
+  "root": "apps/payment-app",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/payment/tsconfig.app.json"
+  },
+  "projects": {
+    "auth": {
+      "type": "application",
+      "root": "apps/auth",
+      "entryFile": "main",
+      "sourceRoot": "apps/auth/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/auth/tsconfig.app.json"
+      }
+    },
+    "payment": {
+      "type": "application",
+      "root": "apps/payment",
+      "entryFile": "main",
+      "sourceRoot": "apps/payment/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/payment/tsconfig.app.json"
+      }
+    },
+    "common": {
+      "type": "library",
+      "root": "libs/common",
+      "entryFile": "index",
+      "sourceRoot": "libs/common/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/common/tsconfig.lib.json"
+      }
+    }
+  }
+}
